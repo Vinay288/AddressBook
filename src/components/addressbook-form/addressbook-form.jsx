@@ -95,9 +95,9 @@ const AddressBookForm = (props) => {
         }
         console.log(object)
         addressbook.addAddressBook(object).then(data => {
-            console.log("data added");
+            console.log("data added successfully");
         }).catch(err => {
-            console.log("err while add", err);
+            console.log("error while adding data ", err);
         })
         navigate('/home')
     }
