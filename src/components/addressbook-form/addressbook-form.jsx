@@ -94,7 +94,7 @@ const AddressBookForm = (props) => {
             id: uuidv1(),
         }
         console.log(object)
-        addressbook.addAddressBook(object).then(data => {
+        addressbook.addContact(object).then(data => {
             console.log("data added successfully");
         }).catch(err => {
             console.log("error while adding data ", err);
