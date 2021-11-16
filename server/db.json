@@ -1,0 +1,40 @@
+{
+  "addressbook": [
+    {
+      "name": "vinys",
+      "phoneNumber": "455454",
+      "address": "45545",
+      "city": "",
+      "state": "",
+      "zipCode": "",
+      "id": 1234
+    },
+    {
+      "name": "Vjhh",
+      "phoneNumber": "45545",
+      "address": "sdsds",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "zipCode": "44545",
+      "id": 123
+    },
+    {
+      "name": "Vinay",
+      "phoneNumber": "dsds",
+      "address": "dsds",
+      "city": "Bangalore",
+      "state": "Maharastra",
+      "zipCode": "4545",
+      "id": "b69ec790-46a5-11ec-a0d3-e7484fd58402"
+    },
+    {
+      "name": "Vinay",
+      "phoneNumber": "9110473394",
+      "address": "abcd",
+      "city": "Bangalore",
+      "state": "Maharastra",
+      "zipCode": "587201",
+      "id": "8e447070-46a9-11ec-9e25-c54387b5fdd3"
+    }
+  ]
+}
