@@ -27,14 +27,14 @@ const Display = (props) => {
                 {
                     props.contactArray && props.contactArray.map((element, ind) => (
                         <tr key={ind}>
-                            <td>{element.name}</td>
-                            <td>{element.address}</td>
+                            <td>{element.firstName}</td>
+                            <td>{element.lastName}</td>
                             <td>{element.city}</td>
                             <td>{element.state}</td>
                             <td>{element.zipCode}</td>
                             <td>{element.phoneNumber}</td>
-                            <td><img onClick={() => remove(element.id)} src={deleteIcon} alt="delete" />
-                                <Link to={"/form/" + (element.id)}> <img src={editIcon} alt="edit" /></Link>
+                            <td><img onClick={() => remove(element.contactId)} src={deleteIcon} alt="delete" />
+                                <Link to={"/form/" + (element.contactId)}> <img src={editIcon} alt="edit" /></Link>
                             </td>
                         </tr>
 
