@@ -1,5 +1,6 @@
 import '../home/home.scss'
 import { Link } from 'react-router-dom'
+import Display from '../display/display';
 const Home = (props) => {
     return (
         <div>
@@ -22,7 +23,7 @@ const Home = (props) => {
                         <img src="assets/add_person.png" alt="" /></Link>
                 </div>
                 <div class="table-main">
-                    <table id="table-display" class="table"></table>
+                    <Display  />
                 </div>
             </div>
         </div>
