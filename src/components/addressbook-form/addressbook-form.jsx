@@ -3,7 +3,6 @@ import { Link, useNavigate , useParams } from 'react-router-dom'
 import logo from "../../assets/contact_logo.png"
 import { useState } from "react";
 import AddressBookService from "../../services/addressbook-service";
-import { v1 as uuidv1 } from 'uuid';
 var addressbook = new AddressBookService();
 
 const AddressBookForm = (props) => {
@@ -45,7 +44,7 @@ const AddressBookForm = (props) => {
             zipCode: ''
 
         }
-        const regName = /^[A-Z]{1}[A-Za-z]{2,}([\\s]?([a-zA-Z]{3,}))*$/
+        const regName = /^[A-Z]{1}[A-Za-z]{2,}([\s]?([a-zA-Z]+))*$/
         if (formValue.name.length < 1 || !regName.test(formValue.name)) {
             error.name = 'name is wrong'
             isError = true;
@@ -55,12 +54,12 @@ const AddressBookForm = (props) => {
             error.phoneNumber = 'phone Number is wrong'
             isError = true;
         }
-        const regAddress = /^[a-zA-Z0-9]{3,}([\\s]?[a-zA-Z0-9]{3,})*$/
+        const regAddress = /^[a-zA-Z0-9]{3,}([\s]?[a-zA-Z0-9]{3,})*$/
         if (formValue.address.length < 1 || !regAddress.test(formValue.address)) {
             error.address = 'address is required'
             isError = true;
         }
-        const regZip = /^[0-9]{3}[\\s]?[0-9]{3}$/
+        const regZip = /^[0-9]{3}[\s]?[0-9]{3}$/
         if (formValue.zipCode.length < 1 || !regZip.test(formValue.zipCode)) {
             error.zipCode = 'zipcode is required'
             isError = true;
@@ -84,12 +83,12 @@ const AddressBookForm = (props) => {
             addressbook.getContact(id).then(contact => {
                 setForm({
                     ...formValue,
-                    name: contact.data.name,
-                    phoneNumber: contact.data.phoneNumber,
-                    address: contact.data.address,
-                    city: contact.data.city,
-                    state: contact.data.state,
-                    zipCode: contact.data.zipCode,
+                    name: contact.data.data.firstName,
+                    phoneNumber: contact.data.data.phoneNumber,
+                    address: contact.data.data.lastName,
+                    city: contact.data.data.city,
+                    state: contact.data.data.state,
+                    zipCode: contact.data.data.zipCode,
 
                 });
             }).catch(error => {
@@ -108,9 +107,9 @@ const AddressBookForm = (props) => {
         }
         if(formValue.isUpdate){
         let object = {
-            name: formValue.name,
+            firstName: formValue.name,
             phoneNumber: formValue.phoneNumber,
-            address: formValue.address,
+            lastName: formValue.address,
             city: formValue.city,
             state: formValue.state,
             zipCode: formValue.zipCode
@@ -121,17 +120,17 @@ const AddressBookForm = (props) => {
         }).catch(err => {
             console.log("error during update", err);
         })
+        formValue.isUpdate=false
     }
         
         else {
             let object = {
-                name: formValue.name,
+                firstName: formValue.name,
                 phoneNumber: formValue.phoneNumber,
-                address: formValue.address,
+                lastName: formValue.address,
                 city: formValue.city,
                 state: formValue.state,
                 zipCode: formValue.zipCode,
-                id:uuidv1()
             }
             console.log(object)
             await addressbook.addContact(object).then(data => {
