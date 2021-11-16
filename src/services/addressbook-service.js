@@ -5,12 +5,12 @@ const axios=require('axios').default;
 export default class AddressBookService{
 
     baseUrl=config.baseUrl;
-    addAddressBook(data)
+    addContact(data)
     {
         console.log("push data")
         return axios.post(`${this.baseUrl}`,data);
     }
-    getAllEmployees()
+    getAllContacts()
     {
         console.log("get data")
         return axios.get(`${this.baseUrl}`);
