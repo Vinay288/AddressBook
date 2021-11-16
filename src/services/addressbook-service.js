@@ -18,16 +18,16 @@ export default class AddressBookService{
     deleteContact(id)
     {
         console.log("deleted")
-        axios.delete(`${this.baseUrl}/`+id);
+        axios.delete(`${this.baseUrl}`+id);
     }
-    updateEmployee(data,id)
+    updateContact(data,id)
     {
         console.log("update")
-        axios.put(`${this.baseUrl}update/`+id,data);
+        return axios.put(`${this.baseUrl}`+id,data);
     }
-    getEmployee(id){
+    getContact(id){
         console.log("get data for one")
-        return axios.get(`${this.baseUrl}get/`+id);
+        return axios.get(`${this.baseUrl}`+id);
     }
 }
 
