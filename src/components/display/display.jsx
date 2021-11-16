@@ -8,9 +8,8 @@ var addbressbook = new AddressBookService
 
 const Display = (props) => {
     const remove = (id) => {
-        // employee.deleteEmployee(id)
+        addbressbook.deleteContact(id)
         window.location.reload();
-
     }
 
     return (
