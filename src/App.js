@@ -9,6 +9,7 @@ function App() {
     <Routes>
     <Route path="/" element={<AddressBookForm />} ></Route> 
     <Route path="/home" element={<Home />} ></Route>  
+    <Route path="/form/:id" element={<AddressBookForm />} ></Route> 
     </Routes>
 </BrowserRouter> 
   );
