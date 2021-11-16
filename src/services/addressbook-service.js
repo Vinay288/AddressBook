@@ -15,10 +15,10 @@ export default class AddressBookService{
         console.log("get data")
         return axios.get(`${this.baseUrl}`);
     }
-    deleteEmployee(id)
+    deleteContact(id)
     {
         console.log("deleted")
-        axios.delete(`${this.baseUrl}delete/`+id);
+        axios.delete(`${this.baseUrl}/`+id);
     }
     updateEmployee(data,id)
     {
