@@ -9,7 +9,7 @@ const Home = (props) => {
     const getAllEmployees = () => {
         addressbook.getAllContacts().then(contact => {
             console.log("data after get", contact.data);
-            setContactArray(...contactArray, contact.data)
+            setContactArray(contact.data.data)
         })
             .catch(err => {
                 console.log("err after", err);
