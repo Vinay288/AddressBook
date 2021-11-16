@@ -12,7 +12,7 @@ const Display = (props) => {
         window.location.reload();
 
     }
-    
+
     return (
         <table id="display" className="table">
             <tbody>
@@ -26,7 +26,7 @@ const Display = (props) => {
                     <th>Actions</th>
                 </tr>
                 {
-                    props.employeeArray && props.employeeArray.map((element, ind) => (
+                    props.contactArray && props.contactArray.map((element, ind) => (
                         <tr key={ind}>
                             <td>{element.name}</td>
                             <td>{element.address}</td>
